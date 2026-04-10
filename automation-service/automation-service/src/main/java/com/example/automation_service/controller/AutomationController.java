@@ -7,12 +7,16 @@ import org.springframework.web.bind.annotation.*;
 public class AutomationController {
 
     @PostMapping("/process")
-    public String process() {
-        return "Processing automation rules";
-    }
+    public String process(@RequestBody Map<String, Object> data) {
 
-    @GetMapping("/logs")
-    public String logs() {
-        return "Automation logs";
+        double temp = Double.parseDouble(data.get("temperature").toString());
+
+        if (temp > 32) {
+            return "TURN_FAN_ON";
+        } else if (temp < 20) {
+            return "TURN_HEATER_ON";
+        }
+
+        return "NO_ACTION";
     }
 }
