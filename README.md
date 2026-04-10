@@ -46,3 +46,46 @@ This project follows a **Microservices Architecture** using Spring Boot and Spri
 ---
 
 ## 📁 Project Structure
+AGMS/
+├── config-server
+├── eureka-server
+├── api-gateway
+├── zone-service
+├── sensor-service
+├── automation-service
+├── crop-service
+├── config-repo
+
+---
+
+## 🚀 How to Run (Recommended Order)
+1. Start Config Server  
+2. Start Eureka Server  
+3. Start API Gateway  
+4. Start all Microservices  
+
+---
+
+## 🧪 API Testing
+- Postman can be used to test all endpoints  
+- Example endpoints:
+  - `/api/zones`
+  - `/api/sensors/latest`
+  - `/api/automation/process`
+  - `/api/crops`
+
+---
+
+## 📸 Eureka Dashboard
+All services are registered and visible in the Eureka dashboard.
+
+---
+
+## 📌 Notes
+This project demonstrates a distributed system design using microservices architecture and cloud-based configurations.
+
+---
+
+## 👩‍💻 Author
+Sakuni Fernando
+
