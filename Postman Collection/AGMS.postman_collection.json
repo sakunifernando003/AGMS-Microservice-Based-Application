@@ -1,0 +1,152 @@
+{
+  "info": {
+    "name": "AGMS API Collection",
+    "_postman_id": "12345-agms-collection",
+    "description": "API testing collection for Automated Greenhouse Management System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Zone Service",
+      "item": [
+        {
+          "name": "Create Zone",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Tomato Zone\",\n  \"minTemp\": 20,\n  \"maxTemp\": 30\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/zones",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "zones"]
+            }
+          }
+        },
+        {
+          "name": "Get Zone",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/zones/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "zones", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Sensor Service",
+      "item": [
+        {
+          "name": "Get Latest Sensor Data",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/sensors/latest",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "sensors", "latest"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Automation Service",
+      "item": [
+        {
+          "name": "Process Sensor Data",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"zoneId\": \"Zone-A\",\n  \"temperature\": 35\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/automation/process",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "automation", "process"]
+            }
+          }
+        },
+        {
+          "name": "Get Logs",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/automation/logs",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "automation", "logs"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Crop Service",
+      "item": [
+        {
+          "name": "Add Crop",
+          "request": {
+            "method": "POST",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Tomato Batch\",\n  \"status\": \"SEEDLING\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/crops",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "crops"]
+            }
+          }
+        },
+        {
+          "name": "Update Crop Status",
+          "request": {
+            "method": "PUT",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"HARVESTED\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/crops/1/status",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "crops", "1", "status"]
+            }
+          }
+        },
+        {
+          "name": "Get Crops",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/crops",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "crops"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
