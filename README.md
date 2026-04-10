@@ -46,15 +46,31 @@ This project follows a **Microservices Architecture** using Spring Boot and Spri
 ---
 
 ## 📁 Project Structure
-AGMS/
-├── config-server
-├── eureka-server
-├── api-gateway
-├── zone-service
-├── sensor-service
-├── automation-service
-├── crop-service
-├── config-repo
+Automated-Greenhouse-Management-System/
+│
+├── docs/
+│   └── eureka-dashboard.png          # Screenshot showing all services registered (status: UP)
+│
+├── frontend/
+│   └── agms-client/                  # Frontend application (React - optional UI)
+│
+├── infrastructure/
+│   ├── api-gateway/                  # Spring Cloud Gateway (Port: 8080)
+│   ├── config-server/                # Centralized Config Server (Port: 8888)
+│   └── service-registry/             # Eureka Server for service discovery (Port: 8761)
+│
+├── microservices/
+│   ├── zone-service/                 # Zone Management (Spring Boot - Port: 8081)
+│   ├── sensor-service/               # Sensor Data Fetcher (Python/Flask - Port: 8082)
+│   ├── automation-service/           # Rule Engine (Node.js - Port: 8083)
+│   └── crop-service/                 # Crop Lifecycle Management (Node.js - Port: 8084)
+│
+├── config-repo/                      # Centralized YAML configurations for all services
+│
+├── Postman Collection/
+│   └── AGMS.postman_collection.json # API testing collection
+│
+└── README.md                         # Project documentation
 
 ---
 
